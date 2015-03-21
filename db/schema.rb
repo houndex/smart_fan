@@ -24,9 +24,6 @@ ActiveRecord::Schema.define(version: 20150311023201) do
     t.integer  "fan_id"
   end
 
-# Could not dump table "fans" because of following NoMethodError
-#   undefined method `[]' for nil:NilClass
-
   create_table "missions", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
