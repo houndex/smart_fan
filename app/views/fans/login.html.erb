@@ -1,0 +1,48 @@
+<div class="container"></div>
+<% if notice %>
+  <%= notice %>
+<% end %>
+<div class="checkbox">
+    <label>
+      <input type="checkbox"> Check me out
+    </label>
+</div>
+<%= form_for(@fan, url: {action: :login}, method: :post) do |f| %>
+	
+		<div class="form-group">
+		<%= f.label :email %><br>
+		
+		<%= f.text_field :email, class: "form-control", placeholder: "pau.wil@example.com" %>
+		</div>
+	  <div class="form-group">
+		<%= f.label :password %><br>
+		<%= f.password_field :password, class: "form-control" %>
+	  </div>
+	<% if flash[:error] %>
+		<div class='error'>
+			<%= flash[:error] %>
+		</div>
+	<% end %>
+	<input type="checkbox"> Remember me
+	<div class='action'>
+		<%= f.submit "Ingresar", class: "btn btn-success" %>
+	</div>
+
+
+	<div class="col-xs-2 col-md-3">
+	   <a href="#" class="thumbnail">
+	      <img src="http://www.festivalimperial.com/videos/_img/marron5.jpg" class="img-rounded" alt="bordes redondeados">
+	     </a>
+	</div>
+	<div class="col-xs-2">
+	   <a href="#" class="thumbnail">
+	   	<img src="http://hablatumusica.com/wp-content/uploads/2013/02/Vuelven-Foo-Fighters.jpg" class="img-circle" alt="imagen circular">
+	   	 </a>
+	</div>
+	<div class="col-xs-2">
+	   <a href="#" class="thumbnail">
+	   	<img src="http://2.bp.blogspot.com/-WGXEQbQRnQA/ULQIcDQj3dI/AAAAAAAACmg/crXu-pBdPG0/s1600/Red+Hot+Chili+Peppers+Mexico.jpg" class="img-thumbnail" alt="imagen thumbnail">
+	   </a>
+	</div>
+
+<% end %>

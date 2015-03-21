@@ -1,0 +1,27 @@
+<h1>Detalle de la misión</h1>
+<table>
+	<h4>Title:</h4><%= @mission.title%> 
+	<br/>
+	<h4>Content:</h4> <%=number_to_currency(@mission.content)%>
+	<br/>
+	<h4>Points:</h4> <%= @mission.points%>
+	<br/>
+	<h4>Take_mission:</h4> <%= @mission.take_mission%>
+	<br/>
+	<h4>Begin_date:</h4> <%= @mission.begin_date%>
+	<br/>
+	<h4>Final_date:</h4> <%= @mission.final_date%>
+	<br/>
+</table>
+
+<%= link_to 'Volver al listado', url_for(controller: :missions, action: :index) %>
+
+
+			
+			
+			
+			
+			
+			
+			
+			

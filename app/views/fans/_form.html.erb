@@ -1,0 +1,26 @@
+<% if !@fan.errors.empty? %>
+	<ol>
+		<% @fan.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+		<% end %>
+	</ol>
+<% end %>
+
+<%= form_tag('/search', method: :get) do %>
+	<%= label_tag 'Busca:' %>
+	<%= text_field_tag :query %>
+	<%= select_tag :query_type, options_for_select(['easy', 'hard'])%>
+	<%= submit_tag 'GO!' %>
+<% end %>
+
+
+<%= form_for @fan do |f| %>
+	<%= f.text_field :name %>
+	<%= f.text_field :email %>
+	<%= f.select :name, options_for_select(['easy', 'hard']) %>
+	<% unless @fan.persisted? %>
+		<%= f.password_field :password %>
+	<% end %>
+	<%= f.submit %>
+<% end %>
+

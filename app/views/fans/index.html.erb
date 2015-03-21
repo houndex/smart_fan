@@ -1,0 +1,24 @@
+<h1>Lista de fans</h1>
+
+<h2>
+	<%= notice %>
+</h2>
+
+<table>
+	<tr>
+		<th>Nombre del fan</th>
+		<th>Email</th>
+		<th>Misiones</th>
+	</tr>
+	<% @fans.each do |fan| %>
+		<tr>
+			<td><%= fan.name %></td>
+			<td><%= fan.email %></td>
+			<td>
+				<%= link_to 'Ver detalle', fan %> |
+				<%= link_to 'Editar fan', edit_fan_path(fan) %> |
+				<%= link_to 'Eliminar', fan, method: :delete, data: {confirm: 'Deseas eliminar el fan'} %>
+			</td>
+		</tr>
+	<% end %>
+</table>

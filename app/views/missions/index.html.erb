@@ -1,0 +1,24 @@
+<h1>Listando misiones</h1>
+
+<table>
+	<tr>
+		<th>Title</th>
+		<th>Content</th>
+		<th>Points</th>
+		<th>Take Mission</th>
+		<th>Mission's Begin Date</th>
+		<th>Mission's Final Date</th>
+		
+	</tr>
+	<% @missions.each do |mission|%>
+		<tr>
+			<td><%= mission.title%></td>
+			<td><%= mission.content%></td>
+			<td><%= mission.points%></td>
+			<td><%= mission.take_mission%></td>
+			<td><%= mission.begin_date%></td>
+			<td><%= mission.final_date%></td>
+			<td><%= link_to 'Ver misión...', mission_path(mission)%></td>
+		</tr>
+	<% end %>		
+</table>

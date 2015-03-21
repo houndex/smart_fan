@@ -1,0 +1,8 @@
+<h1>Detalle del fan</h1>
+
+<h2>Nombre:</h2> <%= @artist.fan.name %> 
+<br/>
+<h2>Puntos:</h2> <%= @artist.fan.points %> 
+<br/><br/>
+
+<%= link_to 'Volver al listado', url_for(controller: :fans, action: :index) %>

@@ -1,0 +1,22 @@
+<h1>Lista de Artistas</h1>
+
+<table>
+	<tr>
+		<th>Artista | </th> 
+		<th>Mail del artista |</th>
+		<th>Teléfono del artista |</th>
+		<th>Biografía |</th>
+		<th>Avatar |</th>
+	</tr>
+	<% @artists.each do |artist| %>
+		<tr>
+			<td><%= artist.name.capitalize%> </td>
+			<td><%= artist.user.email %> </td>
+			<td><%= artist.user.phone%> </td>
+			<td><%= artist.user.bio%> </td>
+			<td><%= artist.user.photo%> </td>
+			<td><%= artist.created_at%> </td>
+			<td><%= link_to 'Ver detalle', url_for(controller: :artists, action: :show, id: artist.id) %></td>
+		</tr>
+	<% end %>
+</table>
